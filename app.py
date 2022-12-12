@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
-import dblib.querydb
+from dblib.dbquery import DB
+
 
 app = FastAPI()
 db = DB()
@@ -23,7 +24,7 @@ async def add(num1: int, num2: int):
 async def query():
     """Execute a SQL query"""
 
-    result = querydb()
+    result = db.query1()
     return {"result": result}
 
 

@@ -1,4 +1,3 @@
-import pandas as pd
 import MySQLdb
 import os
 
@@ -6,10 +5,10 @@ class DB:
     def __init__(self):
         # get connected with the db
         self.connection = MySQLdb.connect(
-            # host="rds-mysql.ccpbwcnz4url.us-east-2.rds.amazonaws.com",
-            # user="admin",
-            # passwd=os.environ["DB_PASS"],
-            # db="ids706",
+            host="http://imdb.ciankffgrtkz.us-east-1.rds.amazonaws.com",
+            user="admin",
+            passwd=os.environ["PROJ5_DB_PASS"],
+            db="proj5",
         )
         # get the cursor of the connection
         self.cursor = self.connection.cursor()
