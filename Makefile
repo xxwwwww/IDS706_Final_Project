@@ -3,10 +3,14 @@ install:
 	pip install -r requirements.txt
 
 lint:
-	pylint --disable=W,R,C --ignore-patterns=test_.*?py *.py
+	pylint --disable=R,C --ignore-patterns=test_.*?py *.py
 
 build:
+	docker build -t ids706-final-project .
 
 deploy:
-
-all:
+	aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 057329718388.dkr.ecr.us-east-2.amazonaws.com
+	docker tag ids706-final-project:latest 057329718388.dkr.ecr.us-east-2.amazonaws.com/ids706-final-project:latest
+	docker push 057329718388.dkr.ecr.us-east-2.amazonaws.com/ids706-final-project:latest
+	
+all: install lint build deploy
