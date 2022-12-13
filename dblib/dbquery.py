@@ -14,24 +14,20 @@ class DB:
         self.cursor = self.connection.cursor()
 
     # the followings are three queries
-    def query1(self,  ):
-        sql = (
-            
-        )
+    '''
+    query1: return all the names of movies directed by a specified director
+    '''
+    def query1(self, director_name):
+        sql1 = 'SELECT TITLE FROM MOVIE WHERE DIRECTOR = "' + director_name + '"'
     
-        self.cursor.execute(sql)
-        data = self.cursor.fetchall()
-        
-        result = {};
-        result['id'] = []
-        result['title'] = []
-        result['subject'] = []
-        result['rating'] = []
-        
-        for row in data:
-            result['id'].append(str(row[0]))
-            result['title'].append(str(row[1]))
-            result['subject'].append(str(row[2]))
-            result['rating'].append(str(row[3]))
-        return result;
+    '''
+    query2: return the names of movies that have ratings higher than 9
+    '''
+    def query2(self):
+        sql2 = 'SELECT TITLE FROM MOVIE WHERE RATING > 9'
 
+    '''
+    query3: return the top 10 highest grossing movies
+    '''
+    def query3(self):
+        sql3 = 'SELECT TITLE FROM MOVIE ORDER BY RATING DESC LIMIT 10'
