@@ -1,5 +1,4 @@
 """Database query lib"""
-import os
 import json
 import MySQLdb
 
