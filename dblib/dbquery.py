@@ -11,7 +11,7 @@ class DB:
         self.connection = MySQLdb.connect(
             host="imdb.ciankffgrtkz.us-east-1.rds.amazonaws.com",
             user="admin",
-            passwd=os.environ["PROJ5_DB_PASS"],
+            passwd="12349876",
             db="proj5",
         )
         # get the cursor of the connection
