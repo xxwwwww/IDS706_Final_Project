@@ -1,11 +1,12 @@
 import MySQLdb
 import os
 
+
 class DB:
     def __init__(self):
         # get connected with the db
         self.connection = MySQLdb.connect(
-            host="http://imdb.ciankffgrtkz.us-east-1.rds.amazonaws.com",
+            host="imdb.ciankffgrtkz.us-east-1.rds.amazonaws.com",
             user="admin",
             passwd=os.environ["PROJ5_DB_PASS"],
             db="proj5",

@@ -1,7 +1,7 @@
-FROM python:3.8.13-slim-buster
+FROM python:3.11
 
 RUN mkdir -p /app
-COPY app.py requirements.txt /app/
+COPY . app.py requirements.txt /app/
 WORKDIR /app
 
 RUN pip install -r requirements.txt
