@@ -3,7 +3,7 @@ install:
 	pip install -r requirements.txt
 
 lint:
-	pylint --disable=R,C --ignore-patterns=test_.*?py *.py
+	pylint --disable=R,C --ignore-patterns=test_.*?py *.py --ignore=script.py
 
 build:
 	docker build -t ids706-final-project .
